@@ -32,18 +32,18 @@
  <repositories>
     <repository>
       <id>java-maven-app-group</id>
-      <url>http://13.127.39.227:8081/repository/java-maven-app-group/</url>
+      <url>http://ec2-13-127-39-227.ap-south-1.compute.amazonaws.com:8081/repository/java-maven-app-group/</url>
     </repository>
   </repositories>
 
     <distributionManagement>
     <snapshotRepository>
       <id>java-maven-app-snapshot</id>
-      <url>http://13.127.39.227:8081/repository/java-maven-app-snapshot/</url>
+      <url>http://ec2-13-127-39-227.ap-south-1.compute.amazonaws.com:8081/repository/java-maven-app-snapshots/</url>
     </snapshotRepository>
     <repository>
       <id>java-maven-app-release</id>
-      <url>http://13.127.39.227:8081/repository/java-maven-app-release/</url>
+      <url>http://ec2-13-127-39-227.ap-south-1.compute.amazonaws.com:8081/repository/java-maven-app-releases/</url>
     </repository>
   </distributionManagement>
 </project>
