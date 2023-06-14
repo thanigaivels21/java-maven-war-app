@@ -3,7 +3,7 @@
   hosts: all
   become: true
   vars:
-    nexus_url: http://ec2-65-0-123-219.ap-south-1.compute.amazonaws.com:8081/repository
+    nexus_url: http://ec2-13-127-39-227.ap-south-1.compute.amazonaws.com:8081/repository
     repository_type: java-maven-app-release
     group_id: com%2Fmycompany%2Fapp
     artifact_id: hello-world-war
@@ -18,10 +18,10 @@
       password: admin
 
   - name: Rename war file
-    ansible.builtin.shell: mv /home/ec2-user/{{group_id}}%2F{{artifact_id}}%2F{{version}}-{{build_number}}%2F{{artifact_id}}-{{version}}-{{ build_number}}.war /home/ec2-user/faangler.war
+    ansible.builtin.shell: mv /home/ec2-user/{{group_id}}%2F{{artifact_id}}%2F{{version}}-{{build_number}}%2F{{artifact_id}}-{{version}}-{{ build_number}}.war /home/ec2-user/app.war
 
   - name: Deploying artifact in webapps
-    ansible.builtin.shell: cp /home/ec2-user/faangler.war /home/ec2-user/apache-tomcat-9.0.75/webapps/faangler.war
+    ansible.builtin.shell: cp /home/ec2-user/app.war /home/ec2-user/tomcat/webapps/app.war
 
   - name: remove the artifact
-    ansible.builtin.shell: rm -rf /home/ec2-user/faangler.war
+    ansible.builtin.shell: rm -rf /home/ec2-user/app.war
